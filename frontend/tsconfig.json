@@ -1,0 +1,54 @@
+<!-- File: frontend/src/components/ChampionGrid.vue -->
+<template>
+  <div>
+    <input
+      v-model="search"
+      placeholder="챔피언 이름 검색"
+      class="border p-2 mb-4 w-full"
+    />
+
+    <div class="flex space-x-2 mb-4">
+      <button
+        v-for="role in roles"
+        :key="role"
+        @click="toggleRole(role)"
+        :class="[
+          'px-3 py-1 rounded',
+          {
+  "compilerOptions": {
+    "target": "ES2017",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "lib": [
+      "ES2015",
+      "DOM"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "types": ["node"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.vue",
+    "vite.config.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
+
+const filteredChampions = computed(() => championStore.filteredChampions);
+const selectedRole = computed(() => championStore.selectedRole);
+</script>
+
+<style scoped>
+/* 필요에 따라 추가 스타일링 */
+</style>
